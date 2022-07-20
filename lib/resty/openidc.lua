@@ -1471,7 +1471,7 @@ function openidc.authenticate(opts, target_url, unauth_action, session_or_opts)
   local path = openidc_get_path(target_url)
   if path == openidc_get_redirect_uri_path(opts) then
     log(DEBUG, "Redirect URI path (" .. path .. ") is currently navigated -> Processing authorization response coming from OP")
-
+    log(DEBUG, "Custom Message: state check disabled")
     --if not session.present then
       --err = "request to the redirect_uri path but there's no session state found"
       --log(ERROR, err)
