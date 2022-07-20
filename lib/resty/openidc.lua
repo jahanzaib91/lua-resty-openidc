@@ -1472,11 +1472,11 @@ function openidc.authenticate(opts, target_url, unauth_action, session_or_opts)
   if path == openidc_get_redirect_uri_path(opts) then
     log(DEBUG, "Redirect URI path (" .. path .. ") is currently navigated -> Processing authorization response coming from OP")
 
-    if not session.present then
-      err = "request to the redirect_uri path but there's no session state found"
-      log(ERROR, err)
-      return nil, err, target_url, session
-    end
+    --if not session.present then
+      --err = "request to the redirect_uri path but there's no session state found"
+      --log(ERROR, err)
+      --return nil, err, target_url, session
+    --end
 
     return openidc_authorization_response(opts, session)
   end
